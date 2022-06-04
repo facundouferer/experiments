@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+body {
+  background-color: rgb(209, 209, 209);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: oscurecer 10s ease-in-out infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+:root {
+  --radioSol: 15em;
+  --colorLuna: #fff;
+}
+
+h1 {
+  z-index: 1;
+  position: absolute;
+  color: #ffee00;
+  font-family: "Poiret One", cursive;
+  font-size: 3em;
+  letter-spacing: -1px;
+  animation-name: texto;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.sol {
+  background-color: #ffee00;
+  width: var(--radioSol);
+  height: var(--radioSol);
+  border-radius: 50%;
+  box-shadow: 0 0 3em #fffb00;
+}
+
+.luna {
+  background-color: #000000;
+  width: var(--radioSol);
+  height: var(--radioSol);
+  border-radius: 50%;
+  animation: eclipse 10s ease-in-out infinite;
+}
+
+.cielo {
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 151, 255);
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 151, 255, 1) 100%
+  );
+  position: absolute;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+@keyframes texto {
+  0% {
+    letter-spacing: -1px;
+  }
+  100% {
+    letter-spacing: 16px;
+  }
+}
+
+@keyframes eclipse {
+  0% {
+    transform: translateX(15em) translateY(4em);
+    background-color: var(--colorLuna);
+  }
+  50% {
+    transform: translateX(0em) translateY(0em);
+    background-color: black;
+  }
+  100% {
+    transform: translateX(-15em) translateY(-10em);
+    background-color: var(--colorLuna);
+  }
+}
+
+@keyframes oscurecer {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: white;
+  }
+}
