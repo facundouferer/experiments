@@ -37,8 +37,8 @@ body {
 }
 
 .lado {
-  filter: blur(2px);
-  border: 10px solid rgba(0, 217, 255, 0.801);
+  filter: blur(1px);
+  border: 2px solid rgba(0, 217, 255, 0.274);
   animation: cambiar 1s ease-in-out infinite alternate;
   background: rgb(80, 184, 255);
   background: radial-gradient(
@@ -50,10 +50,10 @@ body {
 
 @keyframes cambiar {
   0% {
-    opacity: 1;
+    opacity: 0.7;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.6;
   }
 }
 
@@ -101,8 +101,8 @@ body {
   height: 300px;
   background: rgb(0, 174, 255);
   filter: blur(90px);
-  transform: rotateX(90deg) translateZ(-250px);
-  box-shadow: 0 0 100px rgb(30, 191, 255), 0 0 300px rgb(30, 191, 255),
-    0 0 400px rgb(11, 152, 207);
+  transform: rotateX(90deg) translateZ(-200px);
+  box-shadow: 0 0 300px rgb(0, 119, 255), 0 0 500px rgb(30, 191, 255),
+    0 0 700px rgb(11, 152, 207), 0 0 800px rgb(11, 152, 207);
   animation: cambiar 1s linear infinite alternate;
 }
