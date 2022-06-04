@@ -1,0 +1,74 @@
+body {
+  background: linear-gradient(
+    var(--colorFondoArriba) 10%,
+    var(--colorFondo) 100%
+  );
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 100vh;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --radio: 2em;
+  --radio-grande: 100%;
+  --colorFondo: #000000;
+  --colorFondoArriba: #5800ff;
+  --colorPrincipal: #e900ff;
+  --colorSecundario: #ffc600;
+  --tamanioMaximo: 3;
+}
+
+.containers {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.containers div {
+  font-size: 2em;
+  color: var(--colorFondo);
+  margin: 0.1em;
+}
+
+.circulo {
+  width: var(--radio);
+  height: var(--radio);
+  border-radius: 50%;
+  background-color: var(--colorPrincipal);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circulo::before {
+  content: "";
+  width: var(--radio-grande);
+  height: var(--radio-grande);
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: circuloExterior 2s ease-out infinite;
+  z-index: -1;
+  background: linear-gradient(
+    var(--colorSecundario) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@keyframes circuloExterior {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(var(--tamanioMaximo));
+    opacity: 0;
+  }
+}
